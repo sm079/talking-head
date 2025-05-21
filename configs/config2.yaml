@@ -1,0 +1,43 @@
+experiment_dir: "experiments/001"
+
+src_dirs:
+  - "./experiments/001/src"
+dst_dirs:
+  - "./experiments/001/dst"
+
+model_paths:
+  encoder: "./experiments/000/models/encoder_076.pth"
+  src_decoder: "./experiments/000/models/src_decoder_076.pth"
+  dst_decoder: "./experiments/000/models/dst_decoder_076.pth"
+  inter: null
+  g_optim: null
+  dweight: null
+  d_grads: null
+  d_optim: null
+
+training:
+  steps: 0
+  total_steps: 0
+  batch_size: 3
+  random_warp: true
+  learning_rate_dropout: false
+  perpetual_loss: null
+  gan_power: 0.0
+  device: "cuda:0"
+
+dtype:
+  ed_dtype: "float32"
+  inter_dtype: "bfloat16"
+  perp_dtype: "float32"
+  disc_dtype: "float32"
+
+image:
+  num_channels: 3
+  in_size: 384
+  out_size: 384
+
+model_dimensions:
+  ae_dims: 512
+  e_dims: 64
+  d_dims: 64
+  m_dims: 32
